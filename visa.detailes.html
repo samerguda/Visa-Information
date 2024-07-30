@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visa Information</title>
+    <title>Visa and Appointment Information</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -31,12 +31,23 @@
             margin-right: 10px;
             cursor: pointer;
         }
+        #appointment-details {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #000;
+            background-color: #f9f9f9;
+        }
+        #appointment-image {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
 
 <div id="current-time"></div>
-<h4><a href="http://agd.sef.pt/?1030460719">Automatic appointment check</a></h4>
+
 <table>
     <tr>
         <th>Field</th>
@@ -92,6 +103,14 @@
     </tr>
 </table>
 
+<div id="appointment-details">
+    <h3>Appointment Details</h3>
+    <p><strong>SEF Branch:</strong> Loja do Cidadão de Agualva-Cacém - AIMA</p>
+    <p><strong>Address:</strong> Praceta Duque de Saldanha, nº 17, em Agualva, 2735-330 AGUALVA-CACÉM</p>
+    <p><strong>Date and Time:</strong> 20 de novembro de 2024 11:00</p>
+    <img id="appointment-image" src="1.jpg" alt="Appointment Details">
+</div>
+
 <button onclick="copyContent()">Copy</button>
 <button onclick="window.print()">Print</button>
 
@@ -112,6 +131,11 @@ Remarks:
   Agendamento (Appointment scheduling) information provided with a URL and reference number
   URL: http://agd.sef.pt/?1030460719
   Reference Number: 1030460719
+
+Appointment Details:
+SEF Branch: Loja do Cidadão de Agualva-Cacém - AIMA
+Address: Praceta Duque de Saldanha, nº 17, em Agualva, 2735-330 AGUALVA-CACÉM
+Date and Time: 20 de novembro de 2024 11:00
         `;
         navigator.clipboard.writeText(text).then(() => {
             alert("Content copied to clipboard");
