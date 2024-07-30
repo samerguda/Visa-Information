@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visa Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #current-time {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #000;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 1em;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div id="current-time"></div>
+
+<table>
+    <tr>
+        <th>Field</th>
+        <th>Information</th>
+    </tr>
+    <tr>
+        <td>Visa Type</td>
+        <td>Residence (Student)</td>
+    </tr>
+    <tr>
+        <td>Surname</td>
+        <td>Alsaadni</td>
+    </tr>
+    <tr>
+        <td>Given Name</td>
+        <td>Samer Guda Nasr</td>
+    </tr>
+    <tr>
+        <td>Passport Number</td>
+        <td>A34985345</td>
+    </tr>
+    <tr>
+        <td>Nationality</td>
+        <td>Riade</td>
+    </tr>
+    <tr>
+        <td>Visa Number</td>
+        <td>030899424</td>
+    </tr>
+    <tr>
+        <td>Validity Period</td>
+        <td>17-09-2024 to 14-01-2025</td>
+    </tr>
+    <tr>
+        <td>Date of Issue</td>
+        <td>23-07-2024</td>
+    </tr>
+    <tr>
+        <td>Number of Entries</td>
+        <td>Multiple (02)</td>
+    </tr>
+    <tr>
+        <td>Duration of Stay</td>
+        <td>120 days</td>
+    </tr>
+    <tr>
+        <td>Remarks</td>
+        <td>
+            Agendamento (Appointment scheduling) information provided with a URL and reference number<br>
+            URL: <a href="http://agd.sef.pt" target="_blank">http://agd.sef.pt</a><br>
+            Reference Number: 1030460719
+        </td>
+    </tr>
+</table>
+
+<button onclick="copyContent()">Copy</button>
+<button onclick="window.print()">Print</button>
+
+<script>
+    function copyContent() {
+        const text = `
+Visa Type: Residence (Student)
+Surname: Alsaadni
+Given Name: Samer Guda Nasr
+Passport Number: A34985345
+Nationality: Riade
+Visa Number: 030899424
+Validity Period: 17-09-2024 to 14-01-2025
+Date of Issue: 23-07-2024
+Number of Entries: Multiple (02)
+Duration of Stay: 120 days
+Remarks:
+  Agendamento (Appointment scheduling) information provided with a URL and reference number
+  URL: http://agd.sef.pt
+  Reference Number: 1030460719
+        `;
+        navigator.clipboard.writeText(text).then(() => {
+            alert("Content copied to clipboard");
+        }, (err) => {
+            alert("Failed to copy content: ", err);
+        });
+    }
+
+    function updateTime() {
+        const now = new Date();
+        document.getElementById('current-time').innerText = `Current Time: ${now.toLocaleString()}`;
+    }
+
+    updateTime();
+    setInterval(updateTime, 1000);
+</script>
+
+</body>
+</html>
